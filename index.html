@@ -402,10 +402,14 @@ footer { background: #060e1f; padding: 40px 5%; display: flex; align-items: cent
     <div class="demo-box">
       <h3>Assista como funciona na prática</h3>
       <p>Uma demonstração completa do sistema em menos de 3 minutos.</p>
-      <div class="video-ph">
-        <div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="video-label">Demonstração em breve</div>
+      
+      <div class="video-ph" style="overflow: hidden; height: auto; padding: 0;">
+        <video width="100%" height="auto" controls autoplay muted loop playsinline style="display: block; border-radius: 16px;">
+          <source src="demo_hotel.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos.
+        </video>
       </div>
+
     </div>
   </div>
 </section>
