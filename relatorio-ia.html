@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>StayPulse — Relatório com IA (admin)</title>
+<style>
+  :root {
+    --azul: #0052FF;
+    --verde: #10B981;
+    --escuro: #0F172A;
+    --claro: #F8FAFC;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--claro);
+    color: var(--escuro);
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--escuro); }
+  textarea {
+    width: 100%;
+    min-height: 220px;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    box-sizing: border-box;
+  }
+  button {
+    background: var(--azul);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+  #resultado {
+    white-space: pre-wrap;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  #gate {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+  }
+  input[type="password"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+  }
+  .erro { color: #DC2626; font-weight: 600; }
+  .metricas { font-size: 14px; color: #475569; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Relatório de Reputação com IA</h1>
+<p style="color:#64748b">Área restrita — cole as reseñas do cliente (formato JSON) e gere o diagnóstico.</p>
+
+<!-- Gate de senha: solo bloquea el uso, la seguridad real la hace el backend -->
+<div id="gate">
+  <input type="password" id="senha" placeholder="Senha de acesso" />
+  <button onclick="entrar()">Entrar</button>
+  <p class="erro" id="erroSenha" style="display:none">Senha incorreta.</p>
+</div>
+
+<div id="app" style="display:none">
+  <label for="reviews"><strong>Reseñas (JSON):</strong></label>
+  <textarea id="reviews">[
+  {"autor": "Carlos M.", "estrellas": 5, "comentario": "Excelente atendimento na recepção.", "respondida": true},
+  {"autor": "Ana R.", "estrellas": 1, "comentario": "Demoraram mais de 40 minutos no checkout.", "respondida": false},
+  {"autor": "Mariana P.", "estrellas": 2, "comentario": "Não responderam minhas dúvidas no WhatsApp.", "respondida": false}
+]</textarea>
+  <br/>
+  <button id="btnGerar" onclick="gerarRelatorio()">Gerar Relatório</button>
+  <div id="resultado" style="display:none"></div>
+</div>
+
+<script>
+  function entrar() {
+    const senha = document.getElementById('senha').value;
+    // Guarda la contraseña en sessionStorage para enviarla en cada request;
+    // la validación de verdad ocurre en el servidor (api/gerar-relatorio.js).
+    sessionStorage.setItem('admin_password', senha);
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+  }
+
+  async function gerarRelatorio() {
+    const btn = document.getElementById('btnGerar');
+    const resultado = document.getElementById('resultado');
+    let resenhas;
+
+    try {
+      resenhas = JSON.parse(document.getElementById('reviews').value);
+    } catch (e) {
+      alert('JSON inválido, revise o formato das reseñas.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Gerando...';
+    resultado.style.display = 'block';
+    resultado.textContent = 'Analisando reseñas e consultando a IA...';
+
+    try {
+      const resp = await fetch('/api/gerar-relatorio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-password': sessionStorage.getItem('admin_password') || ''
+        },
+        body: JSON.stringify({ resenhas })
+      });
+
+      if (resp.status === 401) {
+        resultado.textContent = 'Senha incorreta ou sessão expirada. Recarregue a página.';
+        return;
+      }
+
+      const data = await resp.json();
+
+      if (!resp.ok) {
+        resultado.textContent = 'Erro: ' + (data.error || 'desconhecido');
+        return;
+      }
+
+      resultado.innerHTML =
+        data.relatorio.replace(/\n/g, '<br/>') +
+        `<div class="metricas">Total: ${data.metricas.total} · Positivas: ${data.metricas.positivas} · Negativas: ${data.metricas.negativas} · Sem resposta: ${data.metricas.sinResponder}</div>`;
+    } catch (e) {
+      resultado.textContent = 'Falha na requisição: ' + e;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Gerar Relatório';
+    }
+  }
+</script>
+
+</body>
+</html>
