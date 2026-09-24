@@ -2,119 +2,220 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>StayPulse — Relatório com IA (admin)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StayPulse — Relatório de Reputação com IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --azul: #0052FF;
-    --verde: #10B981;
-    --escuro: #0F172A;
-    --claro: #F8FAFC;
-  }
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--claro);
-    color: var(--escuro);
-    max-width: 760px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--escuro); }
-  textarea {
-    width: 100%;
-    min-height: 220px;
-    font-family: monospace;
-    font-size: 13px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    box-sizing: border-box;
-  }
-  button {
-    background: var(--azul);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 12px;
-  }
-  button:disabled { opacity: 0.6; cursor: not-allowed; }
-  #resultado {
-    white-space: pre-wrap;
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    line-height: 1.5;
-  }
-  #gate {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
-  }
-  input[type="password"] {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-  }
-  .erro { color: #DC2626; font-weight: 600; }
-  .metricas { font-size: 14px; color: #475569; margin-top: 10px; }
+:root {
+  --navy: #0f1e3d;
+  --navy-mid: #1a2e5a;
+  --teal: #00b8a9;
+  --teal-light: #00d4c3;
+  --teal-dark: #008f83;
+  --red: #e24b4a;
+  --gray-100: #f4f6f9;
+  --gray-200: #e8edf4;
+  --gray-400: #94a3b8;
+  --gray-600: #64748b;
+  --gray-700: #475569;
+  --gray-800: #334155;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--gray-100); color: var(--gray-800); min-height: 100vh; }
+h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+
+nav {
+  height: 72px; padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo svg { width: 30px; height: 30px; }
+.nav-logo-text { color: #fff; font-size: 20px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.nav-logo-text span { color: var(--teal); }
+.nav-tag { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 0.5px; }
+
+main { max-width: 820px; margin: 0 auto; padding: 56px 5% 80px; }
+
+.page-head { margin-bottom: 40px; }
+.page-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,184,169,0.1); border: 1px solid rgba(0,184,169,0.25); color: var(--teal-dark); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 18px; }
+.page-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.page-head h1 { font-size: clamp(26px, 3vw, 34px); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 10px; }
+.page-head p { color: var(--gray-600); font-size: 15px; line-height: 1.6; max-width: 560px; }
+
+/* ---- Password gate ---- */
+.gate-card { background: #fff; border-radius: 20px; border: 1px solid var(--gray-200); padding: 40px; max-width: 360px; box-shadow: 0 20px 60px rgba(15,30,61,0.06); }
+.gate-card label { display: block; font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 10px; }
+.gate-card input { width: 100%; height: 48px; border: 1px solid var(--gray-200); background: var(--gray-100); border-radius: 10px; padding: 0 16px; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s; margin-bottom: 16px; }
+.gate-card input:focus { border-color: var(--teal); background: #fff; }
+.btn-prim { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 48px; background: var(--teal); color: #fff; border: none; border-radius: 10px; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 24px rgba(0,184,169,0.25); }
+.btn-prim:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-prim:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.gate-erro { color: var(--red); font-size: 13px; font-weight: 500; margin-top: 12px; display: none; }
+
+/* ---- App (form + report) ---- */
+#app { display: none; }
+.card { background: #fff; border-radius: 20px; border: 1px solid var(--gray-200); padding: 32px; box-shadow: 0 12px 40px rgba(15,30,61,0.04); }
+.card + .card { margin-top: 24px; }
+.card label { display: block; font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 12px; }
+textarea {
+  width: 100%; min-height: 200px; resize: vertical;
+  font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13px; line-height: 1.6;
+  border: 1px solid var(--gray-200); background: var(--gray-100); border-radius: 12px; padding: 16px;
+  color: var(--gray-800); outline: none; transition: border 0.2s;
+}
+textarea:focus { border-color: var(--teal); background: #fff; }
+.card-actions { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+.btn-gerar { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; border: none; padding: 14px 28px; border-radius: 10px; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 24px rgba(0,184,169,0.25); }
+.btn-gerar:hover:not(:disabled) { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-gerar:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.spinner { width: 15px; height: 15px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff; animation: spin 0.7s linear infinite; display: none; }
+.btn-gerar.loading .spinner { display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- Report output ---- */
+#resultado { display: none; margin-top: 24px; }
+.report-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.report-head h2 { font-size: 18px; color: var(--navy); font-weight: 700; }
+.report-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+.metric { background: var(--navy); border-radius: 14px; padding: 18px 14px; text-align: center; }
+.metric-val { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; color: var(--teal-light); line-height: 1; }
+.metric-val.neg { color: #ff8a89; }
+.metric-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+.report-blocks { display: flex; flex-direction: column; gap: 14px; }
+.report-block { border-radius: 16px; padding: 22px 24px; border: 1px solid var(--gray-200); background: var(--gray-100); }
+.report-block-title { display: flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.3px; }
+.report-block-icon { font-size: 17px; }
+.report-block p { font-size: 15px; color: var(--gray-700); line-height: 1.65; }
+.report-block.risco { background: rgba(226,75,74,0.05); border-color: rgba(226,75,74,0.15); }
+.report-block.risco .report-block-title { color: var(--red); }
+.report-block.acao { background: rgba(0,184,169,0.06); border-color: rgba(0,184,169,0.2); }
+.report-block.acao .report-block-title { color: var(--teal-dark); }
+.report-footer { margin-top: 20px; font-size: 12px; color: var(--gray-400); text-align: right; }
+
+.msg-erro { background: rgba(226,75,74,0.06); border: 1px solid rgba(226,75,74,0.2); color: var(--red); border-radius: 12px; padding: 16px 20px; font-size: 14px; }
+
+@media(max-width:640px) {
+  .report-metrics { grid-template-columns: repeat(2,1fr); }
+  .card { padding: 22px; }
+}
 </style>
 </head>
 <body>
 
-<h1>Relatório de Reputação com IA</h1>
-<p style="color:#64748b">Área restrita — cole as reseñas do cliente (formato JSON) e gere o diagnóstico.</p>
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <path d="M15 45L50 15L85 45" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M25 45V85H40M60 85H75V45" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15 60H35L42 45L52 75L60 60H85" stroke="#00b8a9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M40 85V75C40 69.4772 44.4772 65 50 65C55.5228 65 60 69.4772 60 75V85" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-logo-text">Stay<span>Pulse</span></span>
+  </a>
+  <span class="nav-tag">Painel interno</span>
+</nav>
 
-<!-- Gate de senha: solo bloquea el uso, la seguridad real la hace el backend -->
-<div id="gate">
-  <input type="password" id="senha" placeholder="Senha de acesso" />
-  <button onclick="entrar()">Entrar</button>
-  <p class="erro" id="erroSenha" style="display:none">Senha incorreta.</p>
-</div>
+<main>
 
-<div id="app" style="display:none">
-  <label for="reviews"><strong>Reseñas (JSON):</strong></label>
-  <textarea id="reviews">[
+  <div class="page-head">
+    <div class="page-eyebrow"><span class="page-eyebrow-dot"></span>Diagnóstico com IA</div>
+    <h1>Relatório de Reputação</h1>
+    <p>Cole as avaliações do cliente e gere, em segundos, um diagnóstico estratégico pronto para apresentar.</p>
+  </div>
+
+  <!-- Gate de senha -->
+  <div id="gate" class="gate-card">
+    <label for="senha">Senha de acesso</label>
+    <input type="password" id="senha" placeholder="••••••••" />
+    <button class="btn-prim" onclick="entrar()">Entrar</button>
+    <p class="gate-erro" id="erroSenha">Senha incorreta.</p>
+  </div>
+
+  <div id="app">
+    <div class="card">
+      <label for="reviews">Avaliações (formato JSON)</label>
+      <textarea id="reviews">[
   {"autor": "Carlos M.", "estrellas": 5, "comentario": "Excelente atendimento na recepção.", "respondida": true},
   {"autor": "Ana R.", "estrellas": 1, "comentario": "Demoraram mais de 40 minutos no checkout.", "respondida": false},
   {"autor": "Mariana P.", "estrellas": 2, "comentario": "Não responderam minhas dúvidas no WhatsApp.", "respondida": false}
 ]</textarea>
-  <br/>
-  <button id="btnGerar" onclick="gerarRelatorio()">Gerar Relatório</button>
-  <div id="resultado" style="display:none"></div>
-</div>
+      <div class="card-actions">
+        <button class="btn-gerar" id="btnGerar" onclick="gerarRelatorio()">
+          <span class="spinner"></span>
+          <span class="btn-label">Gerar Relatório</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="resultado"></div>
+  </div>
+
+</main>
 
 <script>
   function entrar() {
     const senha = document.getElementById('senha').value;
-    // Guarda la contraseña en sessionStorage para enviarla en cada request;
-    // la validación de verdad ocurre en el servidor (api/gerar-relatorio.js).
     sessionStorage.setItem('admin_password', senha);
     document.getElementById('gate').style.display = 'none';
     document.getElementById('app').style.display = 'block';
   }
 
+  // Convierte **negrito** en <strong> de forma segura (sin permitir HTML arbitrario)
+  function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function boldify(str) {
+    return escapeHtml(str).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }
+
+  // Parsea el texto del relatório en bloques por emoji-título
+  function parseRelatorio(texto) {
+    const secoes = [
+      { emoji: '📊', icon: '📊', classe: '' },
+      { emoji: '🔴', icon: '🔴', classe: '' },
+      { emoji: '⚠️', icon: '⚠️', classe: 'risco' },
+      { emoji: '💡', icon: '💡', classe: 'acao' }
+    ];
+    const partes = texto.split(/(?=📊|🔴|⚠️|💡)/g).map(p => p.trim()).filter(Boolean);
+    if (partes.length === 0) return `<div class="report-block"><p>${boldify(texto)}</p></div>`;
+
+    return partes.map(parte => {
+      const match = secoes.find(s => parte.startsWith(s.emoji));
+      const icon = match ? match.icon : '📌';
+      const classe = match ? match.classe : '';
+      const linhas = parte.split('\n').filter(Boolean);
+      const tituloRaw = linhas.shift() || '';
+      const titulo = tituloRaw.replace(/^[^\wÀ-ÿ]+/, '').replace(/\*\*/g, '').replace(/:$/, '');
+      const corpo = linhas.join(' ');
+      return `<div class="report-block ${classe}">
+        <div class="report-block-title"><span class="report-block-icon">${icon}</span>${titulo}</div>
+        <p>${boldify(corpo)}</p>
+      </div>`;
+    }).join('');
+  }
+
   async function gerarRelatorio() {
     const btn = document.getElementById('btnGerar');
+    const label = btn.querySelector('.btn-label');
     const resultado = document.getElementById('resultado');
     let resenhas;
 
     try {
       resenhas = JSON.parse(document.getElementById('reviews').value);
     } catch (e) {
-      alert('JSON inválido, revise o formato das reseñas.');
+      alert('JSON inválido, revise o formato das avaliações.');
       return;
     }
 
     btn.disabled = true;
-    btn.textContent = 'Gerando...';
+    btn.classList.add('loading');
+    label.textContent = 'Gerando...';
     resultado.style.display = 'block';
-    resultado.textContent = 'Analisando reseñas e consultando a IA...';
+    resultado.innerHTML = '<div class="card"><p style="color:var(--gray-600);font-size:14px;">Analisando avaliações e consultando a IA...</p></div>';
 
     try {
       const resp = await fetch('/api/gerar-relatorio', {
@@ -126,26 +227,36 @@
         body: JSON.stringify({ resenhas })
       });
 
-      if (resp.status === 401) {
-        resultado.textContent = 'Senha incorreta ou sessão expirada. Recarregue a página.';
-        return;
-      }
-
       const data = await resp.json();
 
+      if (resp.status === 401) {
+        resultado.innerHTML = `<div class="msg-erro">Senha incorreta ou sessão expirada. Recarregue a página.</div>`;
+        return;
+      }
       if (!resp.ok) {
-        resultado.textContent = 'Erro: ' + (data.error || 'desconhecido');
+        resultado.innerHTML = `<div class="msg-erro">Erro ao gerar relatório: ${escapeHtml(data.error || 'desconhecido')}</div>`;
         return;
       }
 
-      resultado.innerHTML =
-        data.relatorio.replace(/\n/g, '<br/>') +
-        `<div class="metricas">Total: ${data.metricas.total} · Positivas: ${data.metricas.positivas} · Negativas: ${data.metricas.negativas} · Sem resposta: ${data.metricas.sinResponder}</div>`;
+      const m = data.metricas;
+      resultado.innerHTML = `
+        <div class="card">
+          <div class="report-head"><h2>Diagnóstico StayPulse</h2></div>
+          <div class="report-metrics">
+            <div class="metric"><div class="metric-val">${m.total}</div><div class="metric-label">Total</div></div>
+            <div class="metric"><div class="metric-val">${m.positivas}</div><div class="metric-label">Positivas</div></div>
+            <div class="metric"><div class="metric-val neg">${m.negativas}</div><div class="metric-label">Negativas</div></div>
+            <div class="metric"><div class="metric-val neg">${m.sinResponder}</div><div class="metric-label">Sem resposta</div></div>
+          </div>
+          <div class="report-blocks">${parseRelatorio(data.relatorio)}</div>
+          <div class="report-footer">Gerado com IA · StayPulse</div>
+        </div>`;
     } catch (e) {
-      resultado.textContent = 'Falha na requisição: ' + e;
+      resultado.innerHTML = `<div class="msg-erro">Falha na requisição: ${escapeHtml(String(e))}</div>`;
     } finally {
       btn.disabled = false;
-      btn.textContent = 'Gerar Relatório';
+      btn.classList.remove('loading');
+      label.textContent = 'Gerar Relatório';
     }
   }
 </script>
