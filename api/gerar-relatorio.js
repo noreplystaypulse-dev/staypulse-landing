@@ -1,13 +1,12 @@
 // api/gerar-relatorio.js
-// Función serverless de Vercel. La API key vive SOLO acá (variable de entorno),
-// nunca llega al navegador del cliente.
+// Función serverless de Vercel. La API key vive SOLO acá (variable de entorno).
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
-  // --- 1. Autenticación simple (protege el endpoint mientras es "solo para vos") ---
+  // --- 1. Autenticación simple ---
   const senhaEnviada = req.headers["x-admin-password"];
   if (senhaEnviada !== process.env.ADMIN_PASSWORD) {
     return res.status(401).json({ error: "No autorizado" });
@@ -18,7 +17,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Envíe un array 'resenhas' no vacío" });
   }
 
-  // --- 2. Métricas cuantitativas (equivalente al pandas de tu script) ---
+  // --- 2. Métricas cuantitativas ---
   const total = resenhas.length;
   const positivas = resenhas.filter((r) => r.estrellas >= 4);
   const negativas = resenhas.filter((r) => r.estrellas <= 2);
@@ -26,35 +25,35 @@ export default async function handler(req, res) {
   const sinResponder = total - respondidas.length;
   const listaQuejas = negativas.map((r) => r.comentario);
 
-  // --- 3. Prompt (mismo formato que tu versión en Python) ---
+  // --- 3. Prompt Consultivo, Ejecutivo y Comercial ---
   const prompt = `
-Atue como um Consultor Estratégico de Operações e Reputação da StayPulse.
+Atue como um Consultor Executivo de Inteligência Operacional e Reputação da StayPulse.
 
-Você recebeu o seguinte volume de avaliações do Google Maps de um cliente:
+Você recebeu o seguinte volume de avaliações do Google Maps de um cliente potencial:
 - Total de Avaliações Analisadas: ${total}
 - Avaliações Positivas (4-5★): ${positivas.length}
 - Avaliações Críticas (1-2★): ${negativas.length}
 - Avaliações Respondidas pelo Estabelecimento: ${respondidas.length} de ${total}
 
-Lista de Reclamações Detectadas:
+Amostra de Reclamações Detectadas:
 ${JSON.stringify(listaQuejas)}
 
-Gere um relatório estruturado e profissional em português do Brasil (máximo de 180 palavras) com a seguinte estrutura exata:
+Gere um diagnóstico estratégico, formal, rigoroso e comercialmente persuasivo em português do Brasil (máximo de 200 palavras) mantendo a seguinte estrutura exata:
 
-📊 **Visão Geral dos Números:**
-(Resuma em 1 frase o panorama geral destacando a taxa de resposta e o impacto das avaliações negativas).
+📊 **VISÃO GERAL E MÉTRICAS CHAVE**
+(Resuma com tom executivo a situação da empresa, destacando a taxa de resposta e como a omissão afeta o posicionamento no algoritmo do Google).
 
-🔴 **Gargalo Principal de Atendimento:**
-(Identifique o padrão comum entre as reclamações).
+🎯 **PONTOS CRÍTICOS DE ATENÇÃO OPERACIONAL**
+(Identifique e padronize tecnicamente os principais motivos de insatisfação presentes nas queixas, como falhas de processo, atendimento ou infraestrutura. NUNCA use palavras informais como "gargalo" ou "desleixo").
 
-⚠️ **Risco de Perda de Clientes:**
-(Explique o impacto comercial de deixar ${sinResponder} avaliações sem resposta no Google).
+📉 **IMPACTO FINANCEIRO E PERDA DE OPORTUNIDADES**
+(Explique o impacto comercial direto de deixar ${sinResponder} avaliações sem resposta, citando perda de conversão de novos clientes e fuga de receita para concorrentes da região).
 
-💡 **Plano de Ação StayPulse:**
-(Explique como a automação do StayPulse resolve isso: filtragem de queixas via WhatsApp, respostas automáticas com IA e aumento no volume de 5 estrelas).
+🚀 **PLANO DE AÇÃO E SOLUÇÃO STAYPULSE**
+(Apresente a solução comercial StayPulse de forma indispensável: filtragem de insatisfações via WhatsApp antes de irem ao Google, respostas assistidas por IA para 100% dos comentários e alavancagem de avaliações 5 estrelas).
 `.trim();
 
-  // --- 4. Llamada a la API de Gemini (server-to-server, key nunca expuesta) ---
+  // --- 4. Llamada a la API de Gemini ---
   const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
 
