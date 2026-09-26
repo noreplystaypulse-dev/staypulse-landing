@@ -176,11 +176,11 @@ textarea:focus { border-color: var(--teal); background: #fff; }
   function parseRelatorio(texto) {
     const secoes = [
       { emoji: '📊', icon: '📊', classe: '' },
-      { emoji: '🔴', icon: '🔴', classe: '' },
-      { emoji: '⚠️', icon: '⚠️', classe: 'risco' },
-      { emoji: '💡', icon: '💡', classe: 'acao' }
+      { emoji: '🎯', icon: '🎯', classe: '' },
+      { emoji: '📉', icon: '📉', classe: 'risco' },
+      { emoji: '🚀', icon: '🚀', classe: 'acao' }
     ];
-    const partes = texto.split(/(?=📊|🔴|⚠️|💡)/g).map(p => p.trim()).filter(Boolean);
+    const partes = texto.split(/(?=📊|🎯|📉|🚀)/g).map(p => p.trim()).filter(Boolean);
     if (partes.length === 0) return `<div class="report-block"><p>${boldify(texto)}</p></div>`;
 
     return partes.map(parte => {
