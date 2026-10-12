@@ -1,0 +1,21 @@
+# StayPulse — Inteligência e Gestão de Reputação
+
+> StayPulse é um sistema inteligente de gestão de reputação, avaliações e experiência do cliente para hotéis, pousadas e comércios locais no Brasil.
+
+## Sobre a Empresa
+O StayPulse combina placas físicas interativas (NFC e QR Code) com automação de Inteligência Artificial para capturar feedback em tempo real. A solução realiza triagem preventiva de insatisfações antes que cheguem ao Google Maps ou TripAdvisor, e automatiza respostas com otimização SEO Local e GEO (Generative Engine Optimization).
+
+## Principais Soluções
+- **Placas Inteligentes NFC/QR Code**: Captura rápida de avaliações no ponto de venda/recepção.
+- **Triagem Preventiva**: Direciona clientes satisfeitos (5 estrelas) para o Google e filtra clientes insatisfeitos para suporte privado interno.
+- **Automação de Respostas com IA**: Respostas otimizadas para motores de busca e inteligências artificiais (Gemini, ChatGPT).
+- **Dashboard de Gestão**: Acompanhamento de alertas de manutenção, atendimento e métricas de satisfação em tempo real.
+
+## Preços e Planos
+- **Comércios Locais**: R$ 50/mês + R$ 50 taxa única da placa.
+- **Hotéis e Pousadas**: R$ 250/mês (gestão operacional completa In-House e Post-Stay).
+
+## Localização e Contato
+- **Cidade**: São Paulo - SP, Brasil
+- **Atendimento**: Todo o Brasil
+- **Website Oficial**: https://staypulse.com.br
