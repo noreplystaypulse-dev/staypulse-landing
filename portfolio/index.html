@@ -179,6 +179,24 @@
   .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 0; padding: 8px 0 0; list-style: none; } .tags li { font-size: 12.5px; font-weight: 700; color: var(--accent-text); background: var(--chip); border-radius: 8px; padding: 3px 10px; }
   .grade2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .mais { margin-top: 26px; }
+
+  /* Ajuste para la imagen de StayPulse Hotéis */
+  .card .capa.c2-img {
+    height: 150px !important;
+    padding: 0 !important;
+    background: #0b1329 !important;
+    display: block !important;
+  }
+  .card .capa.c2-img::after {
+    display: none !important;
+  }
+  .card .capa.c2-img img {
+    width: 100% !important;
+    height: 150px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
   
 
   /* ---------- contacto ---------- */
@@ -398,7 +416,22 @@
           </ul>
         </div>
       </article>
-      <article class="card proj rv"><div class="capa c2" aria-hidden="true"><span>🏨</span></div><div class="corpo"><h3 data-es="StayPulse Hoteles">StayPulse Hotéis</h3><p data-es="Código QR en cada habitación para pedidos y evaluaciones, encuesta de satisfacción en el check-out, panel de cambio de turno, gestión de objetos y reporte semanal con el NPS del hotel.">QR Code em cada quarto para pedidos e avaliações, pesquisa de satisfação no check-out, painel de passagem de turno, gestão de objetos e relatório semanal com o NPS do hotel.</p><ul class="tags"><li>Python</li><li>PostgreSQL</li><li>NPS</li><li>WhatsApp</li><li data-es="E-mail">E-mail</li></ul></div></article>
+      <article class="card proj rv">
+        <div class="capa c2-img" aria-hidden="true">
+          <img src="staypulse-hotel.jpg" alt="StayPulse Hotéis e Gestão">
+        </div>
+        <div class="corpo">
+          <h3 data-es="StayPulse Hoteles">StayPulse Hotéis</h3>
+          <p data-es="Código QR en cada habitación para pedidos y evaluaciones, encuesta de satisfacción en el check-out, panel de cambio de turno, gestión de objetos y reporte semanal con el NPS del hotel.">QR Code em cada quarto para pedidos e avaliações, pesquisa de satisfação no check-out, painel de passagem de turno, gestão de objetos e relatório semanal com o NPS do hotel.</p>
+          <ul class="tags">
+            <li>Python</li>
+            <li>PostgreSQL</li>
+            <li>NPS</li>
+            <li>WhatsApp</li>
+            <li data-es="E-mail">E-mail</li>
+          </ul>
+        </div>
+      </article>
       <article class="card proj rv"><div class="capa c3" aria-hidden="true"><span>🧹</span></div><div class="corpo"><h3 data-es="Gobernanza en el celular">Governança no celular</h3><p data-es="Aplicación web (PWA) para que la camarera registre objetos olvidados y dañados directo desde el celular, con login propio y acceso aislado del resto del panel del hotel.">Aplicativo web (PWA) para a camareira registrar objetos esquecidos e danificados direto do celular, com login próprio e acesso isolado do resto do painel do hotel.</p><ul class="tags"><li>PWA</li><li>FastAPI</li><li>JavaScript</li><li data-es="Seguridad">Segurança</li></ul></div></article>
       <article class="card proj rv"><div class="capa c4" aria-hidden="true"><span>💬</span></div><div class="corpo"><h3 data-es="Agente de WhatsApp con IA">Agente de WhatsApp com IA</h3><p data-es="Asistente virtual que atiende nuevos contactos, usa la información de cada negocio para conversar y pasa la atención a una persona cuando hace falta. Flujos en n8n y Evolution API.">Assistente virtual que atende novos contatos, usa as informações de cada negócio para conversar e passa o atendimento para uma pessoa quando é preciso. Fluxos em n8n e Evolution API.</p><ul class="tags"><li>n8n</li><li>WhatsApp API</li><li data-es="IA">IA</li><li>Webhooks</li></ul></div></article>
     </div>
