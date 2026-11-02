@@ -165,11 +165,17 @@
     height: 150px !important;
     padding: 0 !important;
     background: none !important;
+    display: block !important;
+    font-size: 0 !important;
+  }
+
+  .capa.c1-img::after {
+    display: none !important; /* Oculta la cuadrícula encima de la foto */
   }
   
   .capa.c1-img img {
     width: 100% !important;
-    height: 100% !important;
+    height: 150px !important;
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
