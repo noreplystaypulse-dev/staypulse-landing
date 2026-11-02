@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics: la misma etiqueta de la landing (index.html), para ver las visitas a /portfolio en la misma propiedad -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQWKQ289L0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SQWKQ289L0');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruben Dario Figuerero · Sistemas hoteleiros, IA e reputação online | StayPulse</title>
+<meta name="description" content="Consultor em sistemas hoteleiros (PMS), Full Stack Python e IA. Criador da StayPulse: reputação online e automação para hotéis e comércios em São Paulo.">
+<link rel="canonical" href="https://staypulse.com.br/portfolio">
+<meta name="theme-color" content="#050f24">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StayPulse">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Ruben Dario Figuerero · Sistemas hoteleiros, IA e reputação online">
+<meta property="og:description" content="Mais de 10 anos entre hotelaria e tecnologia. Criador da StayPulse: reputação online, IA e automação para hotéis e comércios.">
+<meta property="og:url" content="https://staypulse.com.br/portfolio">
+<meta property="og:image" content="https://staypulse.com.br/portfolio/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ruben Dario Figuerero, consultor em sistemas hoteleiros e criador da StayPulse">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ruben Dario Figuerero · Sistemas hoteleiros, IA e reputação online">
+<meta name="twitter:description" content="Mais de 10 anos entre hotelaria e tecnologia. Criador da StayPulse.">
+<meta name="twitter:image" content="https://staypulse.com.br/portfolio/og.jpg">
+<link rel="preload" href="/portfolio/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/portfolio/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/portfolio/icon-192.png">
+<link rel="apple-touch-icon" href="/portfolio/icon-192.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Ruben Dario Figuerero","jobTitle":"Consultor em sistemas hoteleiros e Full Stack Python","description":"Mais de 10 anos entre hotelaria e tecnologia. Criador da StayPulse: reputação online, IA e automação para hotéis e comércios.","url":"https://staypulse.com.br/portfolio","image":"https://staypulse.com.br/portfolio/ruben-960.jpg","sameAs":["https://www.linkedin.com/in/rubenfiguerero","https://www.instagram.com/staypulse.oficial"],"address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"knowsLanguage":["pt","es","en"],"worksFor":{"@type":"Organization","name":"StayPulse","url":"https://staypulse.com.br"}}
+</script>
+<script>
+(function () {   // tema e idioma ANTES de pintar, para que no parpadee
+  try {
+    var t = localStorage.getItem('sp_pf_tema'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (_) {}
+  document.documentElement.classList.add('js');
+})();
+</script>
+<style>
+  /* Fuentes propias (Sora y DM Sans, licencia OFL): sin Google Fonts */
+  @font-face { font-family: 'Sora'; src: url('/portfolio/fonts/sora-latin.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; src: url('/portfolio/fonts/dm-sans-latin.woff2') format('woff2'); font-weight: 100 1000; font-style: normal; font-display: swap; }
+  /* Paleta de StayPulse (los mismos nombres y valores de la landing) */
+  :root { --abyss: #040c1f; --navy: #0a1a38; --navy-2: #13274d; --cyan: #0ae2f2; --teal: #0b8577; --paper: #eef2f7; --ink: #0f172a; --muted: #58677d; --line: #dde4ee; --display: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif; --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  :root, :root[data-theme="dark"] { --bg: #050f24; --bg-2: #040c1f; --surface: #0a1a38; --surface-2: #0e2247; --border: #17305e; --text: #eaf1fb; --text-2: #9fb4d3; --accent: #0ae2f2; --accent-text: #0ae2f2; --accent-2: #3b82f6; --accent-hover: #5ff0fb; --on-accent: #03121f; --chip: rgba(10, 226, 242, 0.10); --glow: rgba(10, 226, 242, 0.30); --shadow: 0 24px 60px rgba(0, 0, 0, 0.45); --focus: #8ab4ff; --grid: rgba(255, 255, 255, 0.03); --btn-bc: #00eefc; --btn-bi: linear-gradient(90deg, #00eefc, #14d3ef); --btn-fg: #03121f; --btn-sh: 0 8px 28px rgba(10, 226, 242, 0.35); }
+  :root[data-theme="light"] { --bg: #eef2f7; --bg-2: #e4eaf3; --surface: #ffffff; --surface-2: #f4f7fb; --border: #dde4ee; --text: #0f172a; --text-2: #4a5870; --accent: #0b8577; --accent-text: #07695e; --accent-2: #1e5bb8; --accent-hover: #096b60; --on-accent: #ffffff; --chip: rgba(11, 133, 119, 0.10); --glow: rgba(11, 133, 119, 0.20); --shadow: 0 24px 60px rgba(15, 23, 42, 0.14); --focus: #1a5fd0; --grid: rgba(15, 23, 42, 0.05); --btn-bc: #0b8577; --btn-bi: none; --btn-fg: #ffffff; --btn-sh: 0 10px 28px rgba(11, 133, 119, 0.25); }
+  /* Cabecera, héroe, franja de números, contacto y pie son SIEMPRE azul oscuro, como en la landing (el selector de tema solo cambia las secciones del medio) */
+  .topo, .heroi, .numeros, .contato .caixa, footer { --bg: #050f24; --surface: #0a1a38; --surface-2: #0e2247; --border: #17305e; --text: #eaf1fb; --text-2: #9fb4d3; --accent: #0ae2f2; --accent-text: #0ae2f2; --accent-2: #3b82f6; --accent-hover: #5ff0fb; --on-accent: #03121f; --chip: rgba(10, 226, 242, 0.10); --glow: rgba(10, 226, 242, 0.30); --shadow: 0 24px 60px rgba(0, 0, 0, 0.45); --focus: #8ab4ff; --grid: rgba(255, 255, 255, 0.03); --btn-bc: #00eefc; --btn-bi: linear-gradient(90deg, #00eefc, #14d3ef); --btn-fg: #03121f; --btn-sh: 0 8px 28px rgba(10, 226, 242, 0.35); color: var(--text); }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .btn, .marca, .num strong, .eyebrow, .flutua.b strong, .pill button, .foot h4 { font-family: var(--display); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { width: min(1120px, 100% - 40px); margin: 0 auto; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+  .skip { position: absolute; left: 12px; top: -60px; background: var(--accent); color: var(--on-accent); padding: 10px 16px; border-radius: 10px; font-weight: 700; z-index: 100; text-decoration: none; } .skip:focus { top: 12px; }
+
+  /* ---------- cabecera ---------- */
+  .topo { position: sticky; top: 0; z-index: 50; background: rgba(4, 12, 31, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .topo .wrap { display: flex; align-items: center; gap: 14px; height: 68px; }
+  .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: -0.01em; font-size: 18px; margin-right: auto; white-space: nowrap; }
+  .marca svg { width: 34px; height: 34px; } .marca b { color: var(--cyan); } .marca { color: #fff; }
+  .menu { display: flex; gap: 4px; }
+  .menu a { text-decoration: none; padding: 8px 11px; border-radius: 10px; font-size: 15px; font-weight: 600; color: var(--text-2); transition: color .2s, background .2s; }
+  .menu a:hover { color: var(--text); background: var(--chip); } .menu a[aria-current="true"] { color: var(--accent-text); background: var(--chip); }
+  .ctl { display: flex; align-items: center; gap: 8px; }
+  .pill { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+  .pill button { background: transparent; color: var(--text-2); border: 0; padding: 7px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; min-height: 36px; }
+  .pill button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+  .icone { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: transparent; color: var(--text); cursor: pointer; font-size: 16px; }
+  .icone:hover { background: var(--chip); }
+  #menu-btn { display: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 14px; font-weight: 700; font-size: 16px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; font-family: var(--display); }
+  .btn.principal { background-color: var(--btn-bc); background-image: var(--btn-bi); color: var(--btn-fg); box-shadow: var(--btn-sh); } .btn.principal:hover { filter: brightness(1.07); transform: translateY(-2px); }
+  .btn.sec { background: transparent; color: var(--text); border-color: var(--border); } .btn.sec:hover { border-color: var(--accent); color: var(--accent-text); transform: translateY(-2px); }
+  .btn.mini { min-height: 38px; padding: 0 14px; font-size: 14px; border-radius: 10px; }
+
+  /* ---------- héroe ---------- */
+  .heroi { position: relative; overflow: hidden; padding: 72px 0 150px; background: radial-gradient(760px 560px at 66% 45%, rgba(10, 180, 220, 0.26), rgba(10, 110, 180, 0.09) 55%, transparent 75%), var(--abyss); }
+  .heroi::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%); pointer-events: none; }
+  .heroi .wrap { position: relative; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
+  .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--accent); border-radius: 2px; }
+  h1 { font-size: clamp(2.5rem, 5.4vw, 4.2rem); line-height: 1.04; letter-spacing: -0.03em; margin: 14px 0 10px; font-weight: 850; }
+  h1 .grad { background: linear-gradient(100deg, #0ae2f2, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .papel { font-size: clamp(1.05rem, 1.7vw, 1.3rem); color: var(--text); font-weight: 600; margin: 0 0 18px; }
+  .lead { color: var(--text-2); font-size: 1.08rem; max-width: 60ch; margin: 0 0 28px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .chips li { background: var(--chip); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 600; }
+  .retrato { position: relative; justify-self: center; width: min(420px, 100%); }
+  .moldura { position: relative; padding: 3px; border-radius: 30px; background: linear-gradient(150deg, var(--accent), transparent 45%, var(--accent-2)); box-shadow: var(--shadow), 0 0 80px var(--glow); }
+  .moldura picture, .moldura img { border-radius: 27px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 30%; background: var(--surface); }
+  .flutua { position: absolute; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 11px 15px; box-shadow: var(--shadow); font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .flutua.a { left: -26px; bottom: 38px; } .flutua.b { right: -18px; top: 34px; flex-direction: column; align-items: flex-start; gap: 0; }
+  .flutua.b strong { font-size: 26px; line-height: 1.1; color: var(--accent); } .flutua.b span { font-size: 12.5px; color: var(--text-2); font-weight: 600; }
+  .ponto { width: 10px; height: 10px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 0 #34d399; animation: pulsa 2s infinite; flex: none; }
+  @keyframes pulsa { 0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); } 70% { box-shadow: 0 0 0 11px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
+  .ecg { position: absolute; left: 0; right: 0; bottom: 78px; height: 52px; width: 100%; pointer-events: none; opacity: .7; }
+  .ecg path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: traza 3.2s ease-out .3s forwards; } @keyframes traza { to { stroke-dashoffset: 0; } }
+
+  /* ---------- números ---------- */
+  .numeros { margin-top: -62px; position: relative; z-index: 2; background: transparent; }
+  .numeros .wrap { display: grid; grid-template-columns: repeat(4, 1fr); background: #0e2247; border: 1px solid #17305e; border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
+  .num { padding: 24px 26px 22px; border-left: 1px solid rgba(255, 255, 255, 0.07); } .num:first-child { border-left: 0; }
+  .num strong { display: block; font-size: 2.2rem; line-height: 1; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 8px; color: #fff; }
+  .num:nth-child(1) strong { color: #0ae2f2; } .num:nth-child(2) strong { color: #34d399; } .num:nth-child(4) strong { color: #f2a516; }
+  .num span { color: var(--text-2); font-size: 14.5px; line-height: 1.4; display: block; }
+
+  /* ---------- secciones ---------- */
+  section { padding: 92px 0 0; }
+  .cab { max-width: 720px; margin-bottom: 40px; }
+  h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.12; letter-spacing: -0.025em; margin: 10px 0 12px; font-weight: 800; }
+  .cab p { color: var(--text-2); margin: 0; font-size: 1.05rem; }
+  h3 { font-size: 1.12rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; }
+  .sobre { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; }
+  .sobre .txt { position: sticky; top: 96px; } .sobre .txt p { color: var(--text-2); margin: 0 0 16px; font-size: 1.05rem; } .sobre .txt p:first-child { color: var(--text); font-size: 1.15rem; }
+  .pilha { display: grid; gap: 14px; }
+  .lista { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; color: var(--text-2); font-size: 15.5px; }
+  .lista li { padding-left: 20px; position: relative; } .lista li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .sistemas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; } .sistemas li { background: var(--chip); border: 1px solid var(--border); border-radius: 10px; padding: 5px 12px; font-size: 14px; font-weight: 600; }
+  .grade3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; } .grade3 .larga { grid-column: span 2; }
+  .comp { transition: transform .25s, border-color .25s, box-shadow .25s; } .comp:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 18px 40px var(--glow); }
+  .ico { width: 48px; height: 48px; display: grid; place-items: center; font-size: 24px; background: var(--chip); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; }
+  .comp p { margin: 0; color: var(--text-2); font-size: 15.5px; } .comp p + p { margin-top: 8px; }
+
+  /* ---------- experiencia ---------- */
+  .linha { position: relative; display: grid; gap: 18px; padding-left: 34px; }
+  .linha::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--border)); border-radius: 2px; }
+  .item { position: relative; } .item::before { content: ""; position: absolute; left: -34px; top: 26px; width: 18px; height: 18px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 5px var(--chip); }
+  .item.atual::before { background: var(--accent-2); border-color: var(--accent-2); }
+  .item header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; margin-bottom: 10px; }
+  .item h3 { margin: 0; font-size: 1.2rem; } .item .emp { color: var(--accent-text); font-weight: 700; font-size: 15.5px; } .item .per { color: var(--text-2); font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+  .item ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--text-2); font-size: 15.5px; } .item li { padding-left: 18px; position: relative; } .item li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+  .outras { margin-top: 30px; } .outras h3 { margin-bottom: 14px; }
+  .minis { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+  .minis div { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 18px; } .minis strong { display: block; font-size: 15.5px; } .minis span { color: var(--text-2); font-size: 14px; }
+
+  /* ---------- proyectos ---------- */
+  .proj { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, border-color .25s, box-shadow .25s; } .proj:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 18px 40px var(--glow); }
+  .capa { height: 150px; display: grid; place-items: center; font-size: 56px; position: relative; overflow: hidden; }
+  .capa::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px); background-size: 28px 28px; }
+  .capa span { position: relative; z-index: 1; filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.4)); }
+  .c1 { background: linear-gradient(135deg, #0a1a38, #0b8577); } .c2 { background: linear-gradient(135deg, #13274d, #0a6fb8); } .c3 { background: linear-gradient(135deg, #0a1a38, #0a7c92); } .c4 { background: linear-gradient(135deg, #0a1a38 20%, #1d4ed8 130%); }
+  .proj .corpo { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; } .proj p { margin: 0; color: var(--text-2); font-size: 15.5px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 0; padding: 8px 0 0; list-style: none; } .tags li { font-size: 12.5px; font-weight: 700; color: var(--accent-text); background: var(--chip); border-radius: 8px; padding: 3px 10px; }
+  .grade2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .mais { margin-top: 26px; }
+
+  /* ---------- contacto ---------- */
+  .contato .caixa { position: relative; overflow: hidden; border-radius: 28px; padding: 56px 48px; text-align: center; background: radial-gradient(600px 300px at 50% 0%, rgba(10, 180, 220, 0.28), transparent 70%), #0a1a38; border: 1px solid var(--border); box-shadow: var(--shadow); }
+  .contato .eyebrow::after { content: ""; width: 28px; height: 2px; background: var(--accent); border-radius: 2px; } .contato h2 { margin-top: 0; color: #fff; } .contato p { max-width: 58ch; margin: 0 auto 28px; color: var(--text-2); font-size: 1.08rem; }
+  .contato .acoes { justify-content: center; margin-bottom: 20px; } .dados { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; color: var(--text-2); font-size: 15px; } .dados a { text-decoration: none; font-weight: 700; color: var(--text); } .dados a:hover { color: var(--accent-text); }
+  .contato .btn.sec { color: #eaf1fb; border-color: #2a4a7f; }
+  footer { margin-top: 90px; background: #020815; color: rgba(220, 234, 255, 0.62); padding: 48px 0 36px; font-size: 14.5px; }
+  .foot { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; } .foot p { margin: 12px 0 0; max-width: 34ch; } .foot h4 { margin: 0 0 12px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
+  .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; } footer a { color: inherit; text-decoration: none; font-weight: 600; } footer a:hover { color: #0ae2f2; } footer .marca { font-size: 21px; margin-right: 0; }
+  .foot-copy { border-top: 1px solid rgba(255, 255, 255, 0.07); margin-top: 36px; padding-top: 20px; font-size: 13px; color: rgba(220, 234, 255, 0.45); }
+  .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); transition: transform .2s; } .wa-float:hover { transform: scale(1.07); } .wa-float svg { width: 30px; height: 30px; color: #fff; }
+  /* ---------- animación de entrada ---------- */
+  .js .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; } .js .rv.on { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .rv { opacity: 1; transform: none; transition: none; } .ponto, .ecg path { animation: none; } .ecg path { stroke-dashoffset: 0; } * { transition-duration: .01ms !important; } }
+
+  /* ---------- pantallas chicas ---------- */
+  @media (max-width: 1040px) {
+    .menu { display: none; position: absolute; left: 0; right: 0; top: 68px; flex-direction: column; background: var(--bg); border-bottom: 1px solid var(--border); padding: 10px 20px 18px; box-shadow: var(--shadow); } .menu.aberto { display: flex; } .menu a { padding: 13px 12px; font-size: 16px; }
+    #menu-btn { display: grid; } .topo .btn { display: none; }
+  }
+  @media (max-width: 960px) {
+    .grade3 { grid-template-columns: repeat(2, 1fr); } .grade3 .larga { grid-column: auto; } .grade3 .comp:last-child:nth-child(2n+1) { grid-column: 1 / -1; } .sobre .txt { position: static; }
+    .heroi { padding: 44px 0 130px; } .heroi .wrap { grid-template-columns: 1fr; gap: 40px; } .retrato { width: min(360px, 86%); } .flutua.a { left: -10px; } .flutua.b { right: -6px; }
+    .numeros .wrap { grid-template-columns: repeat(2, 1fr); } .num:nth-child(odd) { border-left: 0; } .num:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, 0.07); } .sobre { grid-template-columns: 1fr; } .contato .caixa { padding: 40px 22px; }
+  }
+  @media (max-width: 700px) { .grade3, .grade2 { grid-template-columns: 1fr; } .grade3 .comp:last-child:nth-child(2n+1) { grid-column: auto; } }
+  @media (max-width: 760px) { .foot { grid-template-columns: 1fr; gap: 26px; } }
+  @media (max-width: 520px) { body { font-size: 16px; } .num { padding: 18px 16px; } .num strong { font-size: 1.8rem; } section { padding-top: 72px; } .item .per { white-space: normal; } .pill button { padding: 7px 10px; } .marca span { display: none; } .flutua.a { left: 0; bottom: 18px; font-size: 13px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="logo" viewBox="0 0 100 100" fill="none">
+    <path d="M15 45L50 15L85 45" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M25 45V85H40M60 85H75V45" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15 60H35L42 45L52 75L60 60H85" stroke="#0ae2f2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M40 85V75C40 69.48 44.48 65 50 65C55.52 65 60 69.48 60 75V85" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></symbol>
+</svg>
+<a class="skip" href="#conteudo" data-es="Ir al contenido">Ir para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="/" aria-label="StayPulse, voltar ao site" data-es-aria="StayPulse, volver al sitio"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#logo"/></svg><span>Stay<b>Pulse</b></span></a>
+    <nav class="menu" id="menu" aria-label="Seções" data-es-aria="Secciones">
+      <a href="#inicio" data-es="Inicio">Início</a><a href="#sobre" data-es="Sobre mí">Sobre</a><a href="#competencias" data-es="Competencias">Competências</a><a href="#experiencia" data-es="Experiencia">Experiência</a><a href="#projetos" data-es="Proyectos">Projetos</a><a href="#contato" data-es="Contacto">Contato</a>
+    </nav>
+    <div class="ctl">
+      <div class="pill" role="group" aria-label="Idioma" data-es-aria="Idioma"><button type="button" id="l-pt" aria-pressed="true">PT</button><button type="button" id="l-es" aria-pressed="false">ES</button></div>
+      <button type="button" class="icone" id="tema" aria-label="Alternar tema claro e escuro" data-es-aria="Cambiar tema claro y oscuro">◐</button>
+      <a class="btn principal mini" data-wa href="#contato">WhatsApp</a>
+      <button type="button" class="icone" id="menu-btn" aria-label="Abrir menu" data-es-aria="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ INICIO ============ -->
+<section class="heroi" id="inicio" style="padding-top:72px">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow" data-es="Hotelería + tecnología">Hotelaria + tecnologia</span>
+      <h1>Ruben Dario <span class="grad">Figuerero</span></h1>
+      <p class="papel" data-es="Sistemas hoteleros · Full Stack Python · IA · Reputación online">Sistemas hoteleiros · Full Stack Python · IA · Reputação online</p>
+      <p class="lead" data-es="Más de 10 años entre la recepción y el código. Implanté y di soporte a sistemas de gestión hotelera (PMS) en CMNet, Totvs y Desbravador, con go-lives en hoteles de América Latina. Hoy creo StayPulse: reputación online, IA y automatización para hoteles y comercios, ya en producción.">Mais de 10 anos entre a recepção e o código. Implantei e dei suporte a sistemas de gestão hoteleira (PMS) na CMNet, na Totvs e na Desbravador, com go-lives em hotéis da América Latina. Hoje crio a StayPulse: reputação online, IA e automação para hotéis e comércios, já em produção.</p>
+      <div class="acoes">
+        <a class="btn principal" data-wa href="#contato" data-es="Hablar por WhatsApp">Falar no WhatsApp</a>
+        <a class="btn sec" href="/portfolio/Ruben-Dario-Figuerero-CV.pdf" download data-es="Descargar CV (PDF)">Baixar currículo (PDF)</a>
+      </div>
+      <ul class="chips" aria-label="Tecnologias" data-es-aria="Tecnologías">
+        <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQL · Oracle</li><li data-es="IA generativa">IA generativa</li><li>WhatsApp API</li><li>Stripe</li><li>Linux · Cloud</li>
+      </ul>
+    </div>
+    <div class="retrato rv">
+      <div class="moldura">
+        <picture>
+          <source type="image/webp" srcset="/portfolio/ruben-520.webp 520w, /portfolio/ruben-960.webp 960w" sizes="(max-width: 960px) 86vw, 420px">
+          <img src="/portfolio/ruben-960.jpg" srcset="/portfolio/ruben-520.jpg 520w, /portfolio/ruben-960.jpg 960w" sizes="(max-width: 960px) 86vw, 420px" width="960" height="1200" alt="Retrato de Ruben Dario Figuerero, de terno preto, em pose pensativa" data-es-alt="Retrato de Ruben Dario Figuerero, de traje negro, en pose pensativa" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="flutua a"><span class="ponto" aria-hidden="true"></span><span data-es="Atendiendo hoteles y comercios en São Paulo">Atendendo hotéis e comércios em São Paulo</span></div>
+      <div class="flutua b"><strong>10+</strong><span data-es="años en hotelería y tecnología">anos em hotelaria e tecnologia</span></div>
+    </div>
+  </div>
+  <svg class="ecg" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g-ecg" x1="0" x2="1"><stop offset="0" stop-color="#0ae2f2" stop-opacity="0"/><stop offset=".25" stop-color="#0ae2f2"/><stop offset=".75" stop-color="#3b82f6"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs><path pathLength="1" d="M0 38 H300 L330 38 L350 12 L378 62 L402 26 L420 38 H640 L662 38 L684 8 L714 64 L738 22 L758 38 H1200" fill="none" stroke="url(#g-ecg)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+</section>
+
+<div class="numeros" aria-label="Números" data-es-aria="Números">
+  <div class="wrap">
+    <div class="num rv"><strong>10+</strong><span data-es="años entre hotelería y tecnología">anos entre hotelaria e tecnologia</span></div>
+    <div class="num rv"><strong>5</strong><span data-es="sistemas de gestión hotelera (PMS/ERP) en el currículum">sistemas de gestão hoteleira (PMS/ERP) no currículo</span></div>
+    <div class="num rv"><strong>3</strong><span data-es="idiomas: portugués, español e inglés">idiomas: português, espanhol e inglês</span></div>
+    <div class="num rv"><strong>2</strong><span data-es="negocios usando StayPulse en producción: un hotel y un comercio">negócios usando a StayPulse em produção: um hotel e um comércio</span></div>
+  </div>
+</div>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow" data-es="Resumen profesional">Resumo profissional</span><h2 data-es="Sobre mí">Sobre</h2></div>
+    <div class="sobre">
+      <div class="txt rv">
+        <p data-es="Empecé en el soporte técnico a hoteles, atendiendo emergencias en todos los módulos del PMS, desde la recepción hasta la auditoría nocturna. Después vinieron las implantaciones en Totvs y Desbravador, donde configuré, capacité equipos y acompañé aperturas de hoteles.">Comecei no suporte técnico a hotéis, atendendo emergências em todos os módulos do PMS, da recepção à auditoria noturna. Depois vieram as implantações na Totvs e na Desbravador, onde configurei, treinei equipes e acompanhei aberturas de hotéis.</p>
+        <p data-es="También trabajé en la operación: recepción, reservas y coordinación de equipos en hoteles y apart-hoteles de Buenos Aires y São Paulo. Eso me da la mirada de quien ya estuvo del otro lado del mostrador.">Também trabalhei na operação: recepção, reservas e coordenação de equipes em hotéis e apart-hotéis de Buenos Aires e São Paulo. Isso me dá o olhar de quem já esteve do outro lado do balcão.</p>
+        <p data-es="Hoy junto los dos mundos en StayPulse: una plataforma propia de reputación y experiencia del cliente, con IA y WhatsApp, usada por un hotel y un comercio.">Hoje junto os dois mundos na StayPulse: uma plataforma própria de reputação e experiência do cliente, com IA e WhatsApp, usada por um hotel e um comércio.</p>
+      </div>
+      <div class="pilha rv">
+        <div class="card"><h3 data-es="Sistemas con los que trabajé">Sistemas com os quais trabalhei</h3><ul class="sistemas"><li>Totvs</li><li>CMNet (Bematech)</li><li>CQR Bratasoft</li><li>Desbravador</li><li>Hiits</li></ul></div>
+        <div class="card"><h3 data-es="Formación">Formação</h3><ul class="lista">
+          <li data-es="Agente de Recepción y Reservas en Medios de Hospedaje · IFSUL · 2024–2025">Agente de Recepção e Reservas em Meios de Hospedagem · IFSUL · 2024–2025</li>
+          <li data-es="Técnico Superior en Seguridad e Higiene · Instituto Argentino de Seguridad · 2022">Técnico Superior em Segurança e Higiene · Instituto Argentino de Seguridad · 2022</li>
+          <li data-es="Analista de Sistemas de Computación · IRSO · 2012–2017 (sin concluir)">Analista de Sistemas de Computação · IRSO · 2012–2017 (não concluído)</li>
+          <li data-es="Técnico Mecánico Profesional · 2001–2006">Técnico Mecânico Profissional · 2001–2006</li></ul></div>
+        <div class="card"><h3 data-es="Idiomas">Idiomas</h3><ul class="lista"><li data-es="Portugués: nativo / bilingüe">Português: nativo / bilíngue</li><li data-es="Español: nativo">Espanhol: nativo</li><li data-es="Inglés: básico a intermedio">Inglês: básico a intermediário</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETENCIAS ============ -->
+<section id="competencias">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow" data-es="Competencias">Competências</span><h2 data-es="Del mostrador del hotel a la base de datos">Do balcão do hotel ao banco de dados</h2><p data-es="Lo que sé hacer, organizado por área.">O que sei fazer, organizado por área.</p></div>
+    <div class="grade3">
+      <article class="card comp larga rv"><div class="ico" aria-hidden="true">🏨</div><h3 data-es="Sistemas hoteleros (PMS/ERP)">Sistemas hoteleiros (PMS/ERP)</h3><p>Totvs, CMNet, CQR Bratasoft, Desbravador, Hiits.</p><p data-es="Go-live, soporte funcional, capacitación de usuarios y tickets por SLA (Zendesk).">Go-live, suporte funcional, treinamento de usuários e chamados por SLA (Zendesk).</p></article>
+      <article class="card comp rv"><div class="ico" aria-hidden="true">🐍</div><h3 data-es="Desarrollo">Desenvolvimento</h3><p data-es="Python, integración de APIs, webhooks y pagos recurrentes (Stripe).">Python, integração de APIs, webhooks e pagamentos recorrentes (Stripe).</p></article>
+      <article class="card comp rv"><div class="ico" aria-hidden="true">🤖</div><h3 data-es="IA y automatización">IA e automação</h3><p data-es="APIs de IA para responder reseñas y atender clientes, y la API de WhatsApp para encuestas, feedback en tiempo real y alertas.">APIs de IA para responder avaliações e atender clientes, e a API do WhatsApp para pesquisas, feedback em tempo real e alertas.</p></article>
+      <article class="card comp larga rv"><div class="ico" aria-hidden="true">🗄️</div><h3 data-es="Datos y BI">Dados e BI</h3><p data-es="SQL, Oracle, SQL Server y MySQL: modelado, consultas optimizadas y triggers. Dashboards de NPS, reputación y experiencia del cliente.">SQL, Oracle, SQL Server e MySQL: modelagem, consultas otimizadas e triggers. Dashboards de NPS, reputação e experiência do cliente.</p></article>
+      <article class="card comp rv"><div class="ico" aria-hidden="true">📍</div><h3 data-es="SEO local y reputación online">SEO local e reputação online</h3><p data-es="Google Maps, captación de reseñas y OTAs.">Google Maps, captação de avaliações e OTAs.</p></article>
+      <article class="card comp rv"><div class="ico" aria-hidden="true">🛎️</div><h3 data-es="Operación hotelera">Operação hoteleira</h3><p data-es="Reservas, recepción, check-in y check-out, y coordinación de equipos.">Reservas, recepção, check-in e check-out, e coordenação de equipes.</p></article>
+      <article class="card comp rv"><div class="ico" aria-hidden="true">🖥️</div><h3 data-es="Infraestructura">Infraestrutura</h3><p data-es="Linux, Windows, redes, Azure, Google Cloud y soporte remoto (TeamViewer, RDP).">Linux, Windows, redes, Azure, Google Cloud e suporte remoto (TeamViewer, RDP).</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow" data-es="Experiencia">Experiência</span><h2 data-es="Línea de tiempo profesional">Linha do tempo profissional</h2><p data-es="Los roles que más definen mi trabajo, del soporte a hoteles al desarrollo de mi propio sistema.">Os papéis que mais definem o meu trabalho, do suporte a hotéis ao desenvolvimento do meu próprio sistema.</p></div>
+    <div class="linha">
+      <article class="card item atual rv">
+        <header><div><h3 data-es="Consultor Full Stack en SEO Local, IA y Automatización para Hotelería y Comercio">Consultor Full Stack em SEO Local, IA e Automação para Hotelaria e Varejo</h3><span class="emp" data-es="StayPulse · Autónomo · São Paulo">StayPulse · Autônomo · São Paulo</span></div><span class="per" data-es="Sep. 2026 – actual">Set. 2026 – atual</span></header>
+        <ul>
+          <li data-es="Desarrollé y puse en producción una plataforma propia de reputación online y experiencia del cliente, hoy en uso en un hotel y un comercio local.">Desenvolvi e coloquei em produção uma plataforma própria de reputação online e experiência do cliente, hoje em uso por um hotel e um comércio local.</li>
+          <li data-es="Implementé captación de reseñas y estrategias de SEO local en Google Maps, aumentando el volumen de reseñas y la nota promedio del cliente.">Implementei captação de avaliações e estratégias de SEO local no Google Maps, aumentando o volume de avaliações e a nota média do cliente.</li>
+          <li data-es="Integré APIs de IA para generar respuestas personalizadas a las reseñas de Google y automatizar la atención.">Integrei APIs de IA para gerar respostas personalizadas a avaliações do Google e automatizar o atendimento.</li>
+          <li data-es="Integré la API de WhatsApp para encuestas de satisfacción, captura de feedback en tiempo real y alertas operativas.">Integrei a API do WhatsApp para pesquisas de satisfação, captura de feedback em tempo real e alertas operacionais.</li>
+          <li data-es="Creé para hoteles un canal de comunicación por código QR en las habitaciones y una encuesta de satisfacción inteligente en el check-out.">Criei para hotéis um canal de comunicação por QR Code nos quartos e uma pesquisa de satisfação inteligente no check-out.</li>
+          <li data-es="Construí dashboards para gerentes con NPS, tasa de respuesta, alertas de insatisfacción y volumen de reseñas.">Construí dashboards para gestores com NPS, taxa de resposta, alertas de insatisfação e volume de avaliações.</li>
+          <li data-es="Modelé la base de datos SQL e integré pagos recurrentes y control de acceso mediante webhooks de Stripe.">Modelei o banco de dados SQL e integrei pagamentos recorrentes e controle de acesso via webhooks do Stripe.</li>
+        </ul>
+      </article>
+      <article class="card item rv">
+        <header><div><h3 data-es="Consultor Técnico Trainee">Consultor Técnico Trainee</h3><span class="emp" data-es="Desbravador Software · São Paulo">Desbravador Software · São Paulo</span></div><span class="per" data-es="Oct. 2025 – Ago. 2026">Out. 2025 – Ago. 2026</span></header>
+        <ul>
+          <li data-es="Implanté el sistema de gestión hotelera en hoteles, desde la configuración e instalación hasta la puesta en operación.">Implantei o sistema de gestão hoteleira em hotéis, da configuração e instalação até a entrada em operação.</li>
+          <li data-es="Capacité a usuarios de recepción, reservas y gerencia en la adopción del sistema.">Treinei usuários de recepção, reservas e gerência na adoção do sistema.</li>
+          <li data-es="Desarrollé reportes personalizados y adapté funcionalidades según la operación de cada cliente.">Desenvolvi relatórios personalizados e adaptei funcionalidades conforme a operação de cada cliente.</li>
+          <li data-es="Diagnostiqué y reproduje fallas en un entorno controlado, documentando los casos para los equipos internos y el soporte externo.">Diagnostiquei e reproduzi falhas em ambiente controlado, documentando os casos para as equipes internas e o suporte externo.</li>
+          <li data-es="Definí y validé la infraestructura de hardware, software y red necesaria para cada implantación.">Defini e validei a infraestrutura de hardware, software e rede necessária para cada implantação.</li>
+        </ul>
+      </article>
+      <article class="card item rv">
+        <header><div><h3 data-es="Analista de Soporte e Implementación">Analista de Suporte e Implementação</h3><span class="emp" data-es="Totvs · Argentina">Totvs · Argentina</span></div><span class="per" data-es="Ago. 2016 – Oct. 2017">Ago. 2016 – Out. 2017</span></header>
+        <ul>
+          <li data-es="Lideré implantaciones de PMS para clientes de toda América Latina, incluyendo el acompañamiento presencial en aperturas de hoteles (go-live).">Liderei implantações de PMS para clientes em toda a América Latina, incluindo acompanhamento presencial em aberturas de hotéis (go-live).</li>
+          <li data-es="Resolví incidentes operativos y de base de datos Oracle/SQL, priorizando tickets por SLA e impacto en el cliente.">Resolvi incidentes operacionais e de banco de dados Oracle/SQL, priorizando chamados por SLA e impacto no cliente.</li>
+          <li data-es="Configuré servidores, terminales y estaciones de trabajo para la integración del software hotelero.">Configurei servidores, terminais e estações de trabalho para a integração do software hoteleiro.</li>
+          <li data-es="Capacité a equipos operativos y gerenciales durante la transición tecnológica.">Treinei equipes operacionais e gerenciais durante a transição tecnológica.</li>
+        </ul>
+      </article>
+      <article class="card item rv">
+        <header><div><h3 data-es="Analista de Soporte">Analista de Suporte</h3><span class="emp" data-es="CMNet (Bematech) · Argentina">CMNet (Bematech) · Argentina</span></div><span class="per" data-es="Sep. 2011 – Jul. 2016">Set. 2011 – Jul. 2016</span></header>
+        <ul>
+          <li data-es="Brindé soporte técnico remoto continuo a hoteles usuarios del Front Office.">Prestei suporte técnico remoto contínuo a hotéis usuários do Front Office.</li>
+          <li data-es="Cubrí la guardia de emergencias críticas en todos los módulos: recepción, reservas, housekeeping, facturación y auditoría nocturna.">Atuei no plantão de emergências críticas em todos os módulos: recepção, reservas, governança, faturamento e auditoria noturna.</li>
+          <li data-es="Elaboré reportes de auditoría para centrales de reservas de cadenas hoteleras.">Elaborei relatórios de auditoria para centrais de reservas de redes hoteleiras.</li>
+          <li data-es="Acompañé incidentes de punta a punta hasta la solución definitiva.">Acompanhei incidentes de ponta a ponta até a solução definitiva.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="outras rv">
+      <h3 data-es="Otras experiencias">Outras experiências</h3>
+      <div class="minis">
+        <div><strong data-es="Recepcionista">Recepcionista</strong><span data-es="Hotel Residencial Pantanal · São Paulo · 2024–2025">Hotel Residencial Pantanal · São Paulo · 2024–2025</span></div>
+        <div><strong data-es="Coordinador de Recepción">Coordenador de Recepção</strong><span data-es="HTL Hoteles · Buenos Aires · 2023–2024">HTL Hoteles · Buenos Aires · 2023–2024</span></div>
+        <div><strong data-es="Agente de Reservas y Recepcionista">Agente de Reservas e Recepcionista</strong><span data-es="Babel Apartments & Hotels · Buenos Aires · 2022–2023">Babel Apartments &amp; Hotels · Buenos Aires · 2022–2023</span></div>
+        <div><strong data-es="Administración">Administração</strong><span data-es="Plaza Logística · Buenos Aires · 2022">Plaza Logística · Buenos Aires · 2022</span></div>
+        <div><strong data-es="Freelancer: redes sociales, contenido y páginas web">Freelancer: redes sociais, conteúdo e páginas web</strong><span data-es="Autónomo · Remoto · 2018–2022">Autônomo · Remoto · 2018–2022</span></div>
+        <div><strong data-es="Consultor de sistemas hoteleros">Consultor de sistemas hoteleiros</strong><span data-es="CQR Sistemas SRL · Argentina · 2017–2018">CQR Sistemas SRL · Argentina · 2017–2018</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow" data-es="Proyectos">Projetos</span><h2 data-es="Lo que construí y ya está funcionando">O que construí e já está funcionando</h2><p data-es="Módulos de StayPulse, la plataforma que desarrollo y opero.">Módulos da StayPulse, a plataforma que desenvolvo e opero.</p></div>
+    <div class="grade2">
+      <article class="card proj rv"><div class="capa c1" aria-hidden="true"><span>📍</span></div><div class="corpo"><h3 data-es="StayPulse Reputación">StayPulse Reputação</h3><p data-es="Placas NFC y código QR para comercios: quien evalúa bien va directo a Google, quien tuvo un problema habla en privado con el dueño. Panel con respuestas listas hechas por IA y alertas de nota baja.">Placas NFC e QR Code para comércios: quem avalia bem vai direto para o Google, quem teve um problema fala em privado com o dono. Painel com respostas prontas feitas por IA e alertas de nota baixa.</p><ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li data-es="IA">IA</li><li>NFC · QR</li></ul></div></article>
+      <article class="card proj rv"><div class="capa c2" aria-hidden="true"><span>🏨</span></div><div class="corpo"><h3 data-es="StayPulse Hoteles">StayPulse Hotéis</h3><p data-es="Código QR en cada habitación para pedidos y evaluaciones, encuesta de satisfacción en el check-out, panel de cambio de turno, gestión de objetos y reporte semanal con el NPS del hotel.">QR Code em cada quarto para pedidos e avaliações, pesquisa de satisfação no check-out, painel de passagem de turno, gestão de objetos e relatório semanal com o NPS do hotel.</p><ul class="tags"><li>Python</li><li>PostgreSQL</li><li>NPS</li><li>WhatsApp</li><li data-es="E-mail">E-mail</li></ul></div></article>
+      <article class="card proj rv"><div class="capa c3" aria-hidden="true"><span>🧹</span></div><div class="corpo"><h3 data-es="Gobernanza en el celular">Governança no celular</h3><p data-es="Aplicación web (PWA) para que la camarera registre objetos olvidados y dañados directo desde el celular, con login propio y acceso aislado del resto del panel del hotel.">Aplicativo web (PWA) para a camareira registrar objetos esquecidos e danificados direto do celular, com login próprio e acesso isolado do resto do painel do hotel.</p><ul class="tags"><li>PWA</li><li>FastAPI</li><li>JavaScript</li><li data-es="Seguridad">Segurança</li></ul></div></article>
+      <article class="card proj rv"><div class="capa c4" aria-hidden="true"><span>💬</span></div><div class="corpo"><h3 data-es="Agente de WhatsApp con IA">Agente de WhatsApp com IA</h3><p data-es="Asistente virtual que atiende nuevos contactos, usa la información de cada negocio para conversar y pasa la atención a una persona cuando hace falta. Flujos en n8n y Evolution API.">Assistente virtual que atende novos contatos, usa as informações de cada negócio para conversar e passa o atendimento para uma pessoa quando é preciso. Fluxos em n8n e Evolution API.</p><ul class="tags"><li>n8n</li><li>WhatsApp API</li><li data-es="IA">IA</li><li>Webhooks</li></ul></div></article>
+    </div>
+    <div class="mais rv"><a class="btn sec" href="/" data-es="Conocer StayPulse">Conhecer a StayPulse</a></div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contato" class="contato">
+  <div class="wrap">
+    <div class="caixa rv">
+      <span class="eyebrow" data-es="Contacto">Contato</span>
+      <h2 data-es="Conversemos">Vamos conversar</h2>
+      <p data-es="¿Tienes un hotel o comercio y quieres mejorar la reputación online, automatizar la atención o implantar un sistema? Escríbeme y te respondo personalmente.">Tem um hotel ou comércio e quer melhorar a reputação online, automatizar o atendimento ou implantar um sistema? Escreva e eu respondo pessoalmente.</p>
+      <div class="acoes">
+        <a class="btn principal" data-wa href="#contato" data-es="Hablar por WhatsApp">Falar no WhatsApp</a>
+        <a class="btn sec" id="email-btn" href="#contato" data-es="Enviar e-mail">Enviar e-mail</a>
+        <a class="btn sec" href="https://www.linkedin.com/in/rubenfiguerero" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="dados"><span data-es="São Paulo, SP · presencial y remoto">São Paulo, SP · presencial e remoto</span><a href="https://www.instagram.com/staypulse.oficial" target="_blank" rel="noopener">@staypulse.oficial</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="marca" href="/" aria-label="StayPulse, voltar ao site" data-es-aria="StayPulse, volver al sitio"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#logo"/></svg><span>Stay<b>Pulse</b></span></a>
+        <p data-es="Ruben Dario Figuerero creó StayPulse: reputación digital y automatización para hoteles y comercios.">Ruben Dario Figuerero criou a StayPulse: reputação digital e automação para hotéis e comércios.</p>
+      </div>
+      <div>
+        <h4 data-es="Contacto">Contato</h4>
+        <ul>
+          <li>São Paulo - SP, Brasil</li>
+          <li><a data-wa href="#contato" data-es="Hablar por WhatsApp">Falar no WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/rubenfiguerero" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/staypulse.oficial" target="_blank" rel="noopener">Instagram @staypulse.oficial</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-es="Navegación">Navegação</h4>
+        <ul>
+          <li><a href="/" data-es="Sitio de StayPulse">Site da StayPulse</a></li>
+          <li><a href="https://app.staypulse.com.br" data-es="Entrar al panel">Entrar no painel</a></li>
+          <li><a href="https://app.staypulse.com.br/privacidade" data-es="Política de privacidad">Política de privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-copy">© 2026 Ruben Dario Figuerero · StayPulse</div>
+  </div>
+</footer>
+<a class="wa-float" data-wa href="#contato" aria-label="Falar no WhatsApp" data-es-aria="Hablar por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+(() => {
+  'use strict';
+  const CFG = {
+    whatsapp: '5511950479291',
+    mensagem: { pt: 'Olá, Ruben! Vi o seu portfólio e gostaria de conversar.', es: '¡Hola, Ruben! Vi tu portfolio y me gustaría conversar.' },
+    email: ['rubenfiguerero', 'gmail.com'],
+    titulo: { pt: document.title, es: 'Ruben Dario Figuerero · Sistemas hoteleros, IA y reputación online | StayPulse' },
+    descricao: { pt: document.querySelector('meta[name="description"]').content, es: 'Consultor en sistemas hoteleros (PMS), Full Stack Python e IA. Creador de StayPulse: reputación online y automatización para hoteles y comercios en São Paulo.' }
+  };
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const ler = k => { try { return localStorage.getItem(k); } catch (_) { return null; } };
+  const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} };
+  let lang = 'pt';
+
+  // ---------- idioma (PT / ES) ----------
+  function aplicarLang(l) {
+    lang = l === 'es' ? 'es' : 'pt';
+    document.documentElement.lang = lang === 'es' ? 'es' : 'pt-BR';
+    $$('[data-es]').forEach(e => { if (e.dataset.pt === undefined) e.dataset.pt = e.textContent; e.textContent = lang === 'es' ? e.dataset.es : e.dataset.pt; });
+    $$('[data-es-aria]').forEach(e => { if (e.dataset.ptAria === undefined) e.dataset.ptAria = e.getAttribute('aria-label') || ''; e.setAttribute('aria-label', lang === 'es' ? e.dataset.esAria : e.dataset.ptAria); });
+    $$('[data-es-alt]').forEach(e => { if (e.dataset.ptAlt === undefined) e.dataset.ptAlt = e.getAttribute('alt') || ''; e.setAttribute('alt', lang === 'es' ? e.dataset.esAlt : e.dataset.ptAlt); });
+    $('#l-pt').setAttribute('aria-pressed', String(lang === 'pt')); $('#l-es').setAttribute('aria-pressed', String(lang === 'es'));
+    document.title = CFG.titulo[lang]; $('meta[name="description"]').setAttribute('content', CFG.descricao[lang]);
+    const m = $('#menu-btn'); m.setAttribute('aria-label', lang === 'es' ? (m.getAttribute('aria-expanded') === 'true' ? 'Cerrar menú' : 'Abrir menú') : (m.getAttribute('aria-expanded') === 'true' ? 'Fechar menu' : 'Abrir menu'));
+    montarLinks(); guardar('sp_pf_lang', lang);
+  }
+  function montarLinks() {
+    const wa = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(CFG.mensagem[lang])}`;
+    $$('[data-wa]').forEach(a => { a.href = wa; a.target = '_blank'; a.rel = 'noopener noreferrer'; });
+    const mail = CFG.email.join('@'); const e = $('#email-btn'); if (e) e.href = 'mailto:' + mail + '?subject=' + encodeURIComponent(lang === 'es' ? 'Contacto desde tu portfolio' : 'Contato pelo portfólio');
+  }
+  $('#l-pt').onclick = () => aplicarLang('pt'); $('#l-es').onclick = () => aplicarLang('es');
+
+  // ---------- tema ----------
+  $('#tema').onclick = () => { const novo = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'; document.documentElement.setAttribute('data-theme', novo); guardar('sp_pf_tema', novo); $('meta[name="theme-color"]').setAttribute('content', novo === 'light' ? '#eef2f7' : '#050f24'); };
+  { const t = document.documentElement.getAttribute('data-theme'); $('meta[name="theme-color"]').setAttribute('content', t === 'light' ? '#eef2f7' : '#050f24'); }
+
+  // ---------- menú en celular ----------
+  const menu = $('#menu'), btn = $('#menu-btn');
+  function abrirMenu(on) { menu.classList.toggle('aberto', on); btn.setAttribute('aria-expanded', String(on)); btn.textContent = on ? '✕' : '☰'; btn.setAttribute('aria-label', lang === 'es' ? (on ? 'Cerrar menú' : 'Abrir menú') : (on ? 'Fechar menu' : 'Abrir menu')); }
+  btn.onclick = () => abrirMenu(!menu.classList.contains('aberto'));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => abrirMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('aberto')) { abrirMenu(false); btn.focus(); } });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1040) abrirMenu(false); });
+
+  // ---------- aparición al hacer scroll y sección activa ----------
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } }), { threshold: 0.12 });
+    $$('.rv').forEach(e => io.observe(e));
+    const links = $$('a', menu), mapa = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+    const so = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { links.forEach(a => a.removeAttribute('aria-current')); const a = mapa.get(x.target.id); if (a) a.setAttribute('aria-current', 'true'); } }), { rootMargin: '-45% 0px -50% 0px' });
+    $$('main > section').forEach(s => so.observe(s));
+  } else { $$('.rv').forEach(e => e.classList.add('on')); }
+
+  // ---------- arranque ----------
+  const pedido = new URLSearchParams(location.search).get('lang'), guardado = ler('sp_pf_lang');
+  aplicarLang(pedido === 'es' || pedido === 'pt' ? pedido : (guardado === 'es' ? 'es' : 'pt'));
+})();
+</script>
+</body>
+</html>
