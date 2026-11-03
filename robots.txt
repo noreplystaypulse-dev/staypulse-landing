@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://staypulse.com.br/sitemap.xml
+Sitemap: https://staypulse.com.br/blog/sitemap.xml

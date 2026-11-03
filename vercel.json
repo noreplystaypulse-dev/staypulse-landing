@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/blog", "destination": "https://app.staypulse.com.br/blog" },
+    { "source": "/blog/:path*", "destination": "https://app.staypulse.com.br/blog/:path*" }
+  ]
+}
