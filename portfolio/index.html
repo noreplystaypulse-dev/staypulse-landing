@@ -469,6 +469,7 @@
       <div class="acoes">
         <a class="btn principal" data-wa href="#contato" data-es="Hablar por WhatsApp">Falar no WhatsApp</a>
         <a class="btn sec" id="email-btn" href="#contato" data-es="Enviar e-mail">Enviar e-mail</a>
+        <a class="btn sec" data-blog href="/blog" data-es="Leer el blog">Ler o blog</a>
         <a class="btn sec" href="https://www.linkedin.com/in/rubenfiguerero" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="dados"><span data-es="São Paulo, SP · presencial y remoto">São Paulo, SP · presencial e remoto</span><a href="https://www.instagram.com/staypulse.oficial" target="_blank" rel="noopener">@staypulse.oficial</a></div>
@@ -535,6 +536,7 @@
     montarLinks(); guardar('sp_pf_lang', lang);
   }
   function montarLinks() {
+    const blog = $('[data-blog]'); if (blog) blog.href = lang === 'es' ? '/blog/es' : '/blog';
     const wa = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(CFG.mensagem[lang])}`;
     $$('[data-wa]').forEach(a => { a.href = wa; a.target = '_blank'; a.rel = 'noopener noreferrer'; });
     const mail = CFG.email.join('@'); const e = $('#email-btn'); if (e) e.href = 'mailto:' + mail + '?subject=' + encodeURIComponent(lang === 'es' ? 'Contacto desde tu portfolio' : 'Contato pelo portfólio');
