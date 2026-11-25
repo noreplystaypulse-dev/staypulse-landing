@@ -49,7 +49,7 @@ src="https://www.facebook.com/tr?id=3628153770695810&ev=PageView&noscript=1"
   "@type": "SoftwareApplication",
   "name": "StayPulse",
   "url": "https://staypulse.com.br",
-  "description": "Inteligência e Gestão de Reputação para Hotéis e Comércios.",
+  "description": "Inteligência e Gestão de Reputação para Hotéis e Comércios, e criação de sites com painel para pequenos negócios.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "address": {
@@ -86,6 +86,8 @@ src="https://www.facebook.com/tr?id=3628153770695810&ev=PageView&noscript=1"
       "acceptedAnswer": { "@type": "Answer", "text": "Menos de 15 minutos. Não exige instalação de software nem treinamento demorado da equipe." } },
     { "@type": "Question", "name": "O sistema funciona com Inteligência Artificial?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sim. O StayPulse gera respostas para as avaliações do Google com IA, de forma contextualizada e com SEO local, o que também ajuda o seu negócio a aparecer em buscas feitas no ChatGPT e no Gemini." } },
+    { "@type": "Question", "name": "A StayPulse também cria sites?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Criamos sites, cardápios digitais e lojas com carrinho para restaurantes, hotéis, barbearias, salões e lojas, com painel no celular para você mesmo atualizar fotos, produtos e preços. O pagamento é único, sem mensalidade, a partir de R$ 600. Veja os modelos em staypulse.com.br/demos." } },
     { "@type": "Question", "name": "O que é o Check Pulse?",
       "acceptedAnswer": { "@type": "Answer", "text": "Um diagnóstico gratuito de como o seu hotel ou comércio aparece no Google e nas IAs: nota, volume de avaliações, comparação com o bairro e o que corrigir primeiro." } }
   ]
@@ -332,6 +334,26 @@ h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.02em}
 .offer-hotel li::before{color:var(--cyan)}
 .offer-hotel .offer-foot{border-top-color:rgba(255,255,255,.12)}
 
+/* Sites */
+.sites-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.sites-shot{display:block;border-radius:18px;overflow:hidden;box-shadow:0 40px 90px rgba(10,30,70,.22);border:1px solid var(--line);transition:transform .25s}
+.sites-shot:hover{transform:translateY(-4px)}
+.sites-feats{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin:30px 0 32px}
+.sites-feats>div{display:flex;gap:12px}
+.sites-shot img{width:100%;height:auto}
+.sites-feats .ic{flex:none;width:38px;height:38px;border-radius:10px;background:#e5f6f4;color:var(--teal);display:grid;place-items:center;font-size:18px}
+.sites-feats h3{font-size:15.5px;margin-bottom:2px}
+.sites-feats p{font-size:14px;color:var(--muted)}
+.sites-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.sites-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sites-price{font-size:14px;color:var(--muted);margin-top:14px}
+.sites-price b{color:var(--ink)}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px;counter-reset:st}
+.steps4 div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;counter-increment:st}
+.steps4 div::before{content:counter(st);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--abyss);color:var(--cyan);font:700 14px var(--display);margin-bottom:12px}
+.steps4 h3{font-size:16px;margin-bottom:4px}
+.steps4 p{font-size:14px;color:var(--muted)}
+
 /* Depoimentos */
 .quotes{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:stretch}
 .quote{position:relative;border:1px solid var(--line);border-radius:18px;padding:34px 34px 30px;background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
@@ -386,6 +408,8 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
   .paths{grid-template-columns:1fr}
   .mods{grid-template-columns:repeat(2,1fr)}
   .offers,.quotes{grid-template-columns:1fr}
+  .sites-grid{grid-template-columns:1fr;gap:36px}
+  .steps4{grid-template-columns:1fr 1fr}
   .app{grid-template-columns:1fr}
   .app-side{display:none}
   .foot{grid-template-columns:1fr 1fr}
@@ -398,6 +422,8 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
   .stat{border-right:0;padding:6px 0}
   .path-hotel ul{grid-template-columns:1fr}
   .flows{grid-template-columns:1fr}
+  .sites-feats{grid-template-columns:1fr}
+  .steps4{grid-template-columns:1fr}
   .mods{grid-template-columns:1fr}
   .quote{padding:28px 24px}
   .quote blockquote{font-size:16.5px}
@@ -457,6 +483,7 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
     <ul class="nav-links">
       <li><a href="#hoteis">Hotéis</a></li>
       <li><a href="#comercios">Comércios</a></li>
+      <li><a href="#sites">Criação de sites</a></li>
       <li><a href="#check-pulse">Check Pulse</a></li>
       <li><a href="#planos">Planos</a></li>
     </ul>
@@ -478,6 +505,7 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
       <div class="hero-chips">
         <span class="chip chip-dark"><span class="dot"></span>Gestão de experiência hoteleira</span>
         <a class="chip chip-dark" href="#comercios">Também para comércios locais</a>
+        <a class="chip chip-dark" href="/demos/">Criação de sites →</a>
       </div>
       <h1>Aumente a satisfação dos seus hóspedes com inteligência em tempo real</h1>
       <p class="lede">Saiba o que o hóspede sente durante e depois da estadia. Alertas chegam para a equipe na hora, os problemas são resolvidos antes do check-out e as avaliações boas vão para o Google.</p>
@@ -696,6 +724,41 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
   </div>
 </section>
 
+<!-- CRIAÇÃO DE SITES -->
+<section class="sec" id="sites">
+  <div class="wrap">
+    <div class="sites-grid">
+      <div>
+        <span class="chip"><span class="dot"></span>Criação de sites</span>
+        <h2 style="font-size:clamp(28px,3.2vw,42px);margin:16px 0 14px">Seu site pronto, com a cara do seu negócio</h2>
+        <p style="font-size:17.5px;color:var(--muted)">Criamos sites, cardápios digitais e lojas com carrinho para restaurantes, hotéis, barbearias, salões e lojas. Você atualiza tudo pelo celular, sem depender de ninguém e sem mensalidade.</p>
+        <div class="sites-feats">
+          <div><span class="ic">🎨</span><div><h3>Design com a sua marca</h3><p>Suas cores, logo e fotos. Nada de modelo genérico.</p></div></div>
+          <div><span class="ic">📱</span><div><h3>Painel no celular</h3><p>Troque fotos, produtos, preços e horários em segundos.</p></div></div>
+          <div><span class="ic">🛍️</span><div><h3>Carrinho e pedidos</h3><p>O pedido chega pronto no WhatsApp, com cupons e promoções.</p></div></div>
+          <div><span class="ic">💳</span><div><h3>Pix e cartão</h3><p>Pagamento online com Mercado Pago, se você quiser.</p></div></div>
+          <div><span class="ic">📍</span><div><h3>Pronto para o Google</h3><p>SEO local, mapa e WhatsApp para ser encontrado no bairro.</p></div></div>
+          <div><span class="ic">⚡</span><div><h3>No ar em 7 a 10 dias</h3><p>Rápido, seguro e com o seu domínio próprio.</p></div></div>
+        </div>
+        <div class="sites-ctas">
+          <a class="btn btn-glow" href="/demos/">Ver sites criados</a>
+          <a class="btn btn-outline" href="https://wa.me/5511975387719?text=Ol%C3%A1!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero meu site</a>
+        </div>
+        <p class="sites-price">A partir de <b>R$ 600</b>, pagamento único · Sem mensalidade e sem comissão por venda</p>
+      </div>
+      <a class="sites-shot" href="/demos/" aria-label="Ver os sites e modelos criados pela StayPulse">
+        <img src="sites-criados.webp" width="1400" height="788" loading="lazy" alt="Modelos de sites da StayPulse para restaurantes, hotelaria, barbearias e salões de beleza">
+      </a>
+    </div>
+    <div class="steps4">
+      <div><h3>Conversa</h3><p>Entendemos o seu negócio pelo WhatsApp ou pessoalmente.</p></div>
+      <div><h3>Prévia</h3><p>Montamos uma prévia com as suas fotos para você ver no celular.</p></div>
+      <div><h3>Ajustes</h3><p>Você pede até 2 rodadas de ajustes antes de publicar.</p></div>
+      <div><h3>No ar</h3><p>Publicamos com o seu domínio e te ensinamos a usar o painel.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- DEPOIMENTOS -->
 <section class="sec" id="depoimentos" style="background:#fff">
   <div class="wrap">
@@ -814,6 +877,10 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
         <p>Sim. O StayPulse gera respostas para as avaliações do Google com IA, de forma contextualizada e com SEO local, o que também ajuda o seu negócio a aparecer em buscas feitas no ChatGPT e no Gemini.</p>
       </details>
       <details>
+        <summary>A StayPulse também cria sites?</summary>
+        <p>Sim. Criamos sites, cardápios digitais e lojas com carrinho para restaurantes, hotéis, barbearias, salões e lojas, com painel no celular para você mesmo atualizar fotos, produtos e preços. O pagamento é único, sem mensalidade, a partir de R$ 600. <a href="/demos/" style="color:var(--teal);font-weight:700">Veja os sites criados</a>.</p>
+      </details>
+      <details>
         <summary>O que é o Check Pulse?</summary>
         <p>Um diagnóstico gratuito de como o seu hotel ou comércio aparece no Google e nas IAs: nota, volume de avaliações, comparação com o bairro e o que corrigir primeiro.</p>
       </details>
@@ -848,7 +915,7 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
     <div class="foot">
       <div>
         <div class="brand"><svg><use href="#logo"/></svg><span>Stay<b>Pulse</b></span></div>
-        <p>Impulsionando a reputação digital de hotéis e comércios.</p>
+        <p>Impulsionando a reputação digital de hotéis e comércios, e criando sites para pequenos negócios.</p>
       </div>
       <div>
         <h4>StayPulse Brasil</h4>
@@ -864,6 +931,7 @@ footer{background:#020815;color:rgba(220,234,255,.6);padding:48px 0 36px;font-si
         <ul>
           <li><a href="#hoteis">Hotéis</a></li>
           <li><a href="#comercios">Comércios</a></li>
+          <li><a href="/demos/">Sites criados</a></li>
           <li><a href="#check-pulse">Check Pulse</a></li>
           <li><a href="#planos">Planos</a></li>
           <li><a href="https://app.staypulse.com.br">Entrar no painel</a></li>
