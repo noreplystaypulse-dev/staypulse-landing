@@ -1,6 +1,15 @@
 {
+  "redirects": [
+    { "source": "/demo", "destination": "/demos/", "permanent": true },
+    { "source": "/demo/:path*", "destination": "/demos/:path*", "permanent": true },
+    { "source": "/demos", "destination": "/demos/", "permanent": true },
+    { "source": "/demos/:slug([a-z0-9-]+)", "destination": "/demos/:slug/", "permanent": true },
+    { "source": "/demos/:slug([a-z0-9-]+)/:sub(admin|tela)", "destination": "/demos/:slug/:sub/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "https://app.staypulse.com.br/blog" },
-    { "source": "/blog/:path*", "destination": "https://app.staypulse.com.br/blog/:path*" }
+    { "source": "/blog/:path*", "destination": "https://app.staypulse.com.br/blog/:path*" },
+    { "source": "/demos/", "destination": "https://demos-staypulse.pages.dev/" },
+    { "source": "/demos/:path*", "destination": "https://demos-staypulse.pages.dev/:path*" }
   ]
 }
